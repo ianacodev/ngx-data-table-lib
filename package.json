@@ -1,6 +1,12 @@
 {
   "name": "ngx-data-table-lib",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "ngx data table lib",
+  "author": "josh ianacone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianacodev/ngx-data-table-lib.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -25,6 +31,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
+    "@angular-devkit/build-ng-packagr": "~0.800.0",
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
@@ -39,8 +46,10 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   }

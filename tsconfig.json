@@ -18,6 +18,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-data-table": [
+        "dist/ngx-data-table"
+      ],
+      "ngx-data-table/*": [
+        "dist/ngx-data-table/*"
+      ]
+    }
   }
 }

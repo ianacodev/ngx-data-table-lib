@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "NgxDataTable": {
+      "projectType": "library",
+      "root": "projects/ngx-data-table",
+      "sourceRoot": "projects/ngx-data-table/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-data-table/tsconfig.lib.json",
+            "project": "projects/ngx-data-table/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-data-table/src/test.ts",
+            "tsConfig": "projects/ngx-data-table/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-data-table/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-data-table/tsconfig.lib.json",
+              "projects/ngx-data-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-data-table-lib"
 }
