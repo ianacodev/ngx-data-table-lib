@@ -1,10 +1,12 @@
+// vendor
 import { NgModule } from '@angular/core';
-import { NgxDataTableComponent } from './ngx-data-table.component';
+import { CommonModule } from '@angular/common';
+// components
+import * as fromComponents from './components';
 
 @NgModule({
-  declarations: [NgxDataTableComponent],
-  imports: [
-  ],
-  exports: [NgxDataTableComponent]
+  declarations: [...fromComponents.components],
+  imports: [CommonModule],
+  exports: [...fromComponents.components],
 })
-export class NgxDataTableModule { }
+export class NgxDataTableModule {}
