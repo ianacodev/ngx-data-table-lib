@@ -1,10 +1,10 @@
 /**
- * resolve property
- * @param DataItem
+ * resolve property value.
  * @param properties
+ * @param dataItem
  * @returns value
  */
-export const resolveProperty: Function = (
+export const resolvePropertyValue: Function = (
   properties: string[],
   dataItem: any,
 ): any => {

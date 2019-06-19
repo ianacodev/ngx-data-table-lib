@@ -14,37 +14,41 @@ export class NgxDataTableSyncService {
   constructor(private ngxDataTableItemService: NgxDataTableItemService) {}
 
   /**
-   * Generate table data.
+   * Generate data table card set.
    * @param dataTableConfig
-   * @param
+   * @param data
+   * @returns ngx data table card set
    */
-  generateCardTableData(
-    dataTableConfig: fromNgxDataTableModels.NgxDataTableCardConfig,
-    data: any,
+  generateDataTableCardSet(
+    dataTableCardConfig: fromNgxDataTableModels.NgxDataTableCard,
+    data: any[],
   ): fromNgxDataTableModels.NgxDataTableCardSet {
     return data.map((dataItem: any) =>
-      this.generateNgxDataTableCard(dataTableConfig, dataItem),
+      this.generateNgxDataTableCard(dataTableCardConfig, dataItem),
     );
   }
 
   /**
    * Generate ngx data table card.
-   * @param dataTableConfig
+   * @param dataTableCardConfig
    * @param dataItem
    * @returns ngx data table card
    */
-  generateNgxDataTableCard(
-    dataTableConfig: fromNgxDataTableModels.NgxDataTableCardConfig,
+  private generateNgxDataTableCard(
+    dataTableCardConfig: fromNgxDataTableModels.NgxDataTableCard,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableCard {
     return {
       header: this.generateNgxDataTableCardHeader(
-        dataTableConfig.header,
+        dataTableCardConfig.header,
         dataItem,
       ),
-      body: this.generateNgxDataTableCardBody(dataTableConfig.body, dataItem),
+      body: this.generateNgxDataTableCardBody(
+        dataTableCardConfig.body,
+        dataItem,
+      ),
       footer: this.generateNgxDataTableCardFooter(
-        dataTableConfig.footer,
+        dataTableCardConfig.footer,
         dataItem,
       ),
       data: dataItem,
@@ -57,16 +61,16 @@ export class NgxDataTableSyncService {
    * @param dataItem
    * @returns ngx data table card header
    */
-  generateNgxDataTableCardHeader(
-    ngxDataTableCardHeaderConfig: fromNgxDataTableModels.NgxDataTableCardHeaderConfig,
+  private generateNgxDataTableCardHeader(
+    ngxDataTableCardHeaderConfig: fromNgxDataTableModels.NgxDataTableCardHeader,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableCardHeader {
     return {
-      label: fromNgxDataTableUtils.resolveProperty(
+      label: fromNgxDataTableUtils.resolvePropertyValue(
         ngxDataTableCardHeaderConfig.labelKey,
         dataItem,
       ),
-      subLabel: fromNgxDataTableUtils.resolveProperty(
+      subLabel: fromNgxDataTableUtils.resolvePropertyValue(
         ngxDataTableCardHeaderConfig.subLabelKey,
         dataItem,
       ),
@@ -79,8 +83,8 @@ export class NgxDataTableSyncService {
    * @param DataItem
    * @returns ngx data table card body
    */
-  generateNgxDataTableCardBody(
-    ngxDataTableCardBodyConfig: fromNgxDataTableModels.NgxDataTableCardBodyConfig,
+  private generateNgxDataTableCardBody(
+    ngxDataTableCardBodyConfig: fromNgxDataTableModels.NgxDataTableCardBody,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableCardBody {
     return {
@@ -105,12 +109,12 @@ export class NgxDataTableSyncService {
    * @param DataItem
    * @returns ngx data table card footer
    */
-  generateNgxDataTableCardFooter(
-    ngxDataTableCardFooterConfig: fromNgxDataTableModels.NgxDataTableCardFooterConfig,
+  private generateNgxDataTableCardFooter(
+    ngxDataTableCardFooterConfig: fromNgxDataTableModels.NgxDataTableCardFooter,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableCardFooter {
     const ngxDataTableItemSet: fromNgxDataTableModels.NgxDataTableItemSet = this.generateNgxDataTableCardItemSet(
-      ngxDataTableCardFooterConfig.dataTableItemConfigSet,
+      ngxDataTableCardFooterConfig.dataTableItemSet,
       dataItem,
     );
     return {
@@ -124,12 +128,12 @@ export class NgxDataTableSyncService {
    * @param dataItem
    * @returns ngx data table item
    */
-  generateNgxDataTableCardItemSet(
-    ngxDataTableItemConfigSet: fromNgxDataTableModels.NgxDataTableItemConfigSet,
+  private generateNgxDataTableCardItemSet(
+    ngxDataTableItemConfigSet: fromNgxDataTableModels.NgxDataTableItemSet,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableItemSet {
     return ngxDataTableItemConfigSet.map(
-      (ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableItemConfig) =>
+      (ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableItem) =>
         this.ngxDataTableItemService.generateNgxDataTableItem(
           ngxDataTableItemConfig,
           dataItem,

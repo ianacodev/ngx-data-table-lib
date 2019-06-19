@@ -31,7 +31,7 @@ export class NgxDataTableItemService {
    * @returns data table item
    */
   generateNgxDataTableItem(
-    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableItemConfig,
+    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableItem,
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableItem {
     const baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem = {
@@ -39,7 +39,8 @@ export class NgxDataTableItemService {
       itemType: ngxDataTableItemConfig.itemType,
       itemName: ngxDataTableItemConfig.itemName,
       itemLabel: ngxDataTableItemConfig.itemLabel,
-      itemValue: fromNgxDataTableUtils.resolveProperty(
+      itemKey: ngxDataTableItemConfig.itemKey,
+      itemValue: fromNgxDataTableUtils.resolvePropertyValue(
         ngxDataTableItemConfig.itemKey,
         dataItem,
       ),
@@ -47,32 +48,36 @@ export class NgxDataTableItemService {
       styles: ngxDataTableItemConfig.styles,
     };
     return this.ngxDataTableItemFunctionMap[ngxDataTableItemConfig.itemType](
-      baseNgxDataTableItem,
       ngxDataTableItemConfig,
+      baseNgxDataTableItem,
     );
   }
 
   /**
    * Generate ngx data table button item.
-   * @param ngxDataTableItemConfig
+   * @param ngxDataTableButtonItemConfig
+   * @param baseNgxDataTableItem
    * @returns data table item
    */
   private generateNgxDataTableButtonItem(
+    ngxDataTableButtonItemConfig: fromNgxDataTableModels.NgxDataTableButtonItem,
     baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem,
-    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableButtonItemConfig,
   ): fromNgxDataTableModels.NgxDataTableButtonItem {
-    const ngxDataTableButtonItem = {};
+    const ngxDataTableButtonItem = {
+      actionType: ngxDataTableButtonItemConfig.actionType,
+    };
     return { ...baseNgxDataTableItem, ...ngxDataTableButtonItem };
   }
 
   /**
    * Generate ngx data table display item.
-   * @param ngxDataTableItemConfig
+   * @param ngxDataTableDisplayItemConfig
+   * @param baseNgxDataTableItem
    * @returns data table display item
    */
   private generateNgxDataTableDisplayItem(
+    ngxDataTableDisplayItemConfig: fromNgxDataTableModels.NgxDataTableDisplayItem,
     baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem,
-    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableDisplayItemConfig,
   ): fromNgxDataTableModels.NgxDataTableDisplayItem {
     const ngxDataTableDisplayItem = {};
     return { ...baseNgxDataTableItem, ...ngxDataTableDisplayItem };
@@ -80,35 +85,38 @@ export class NgxDataTableItemService {
 
   /**
    * Generate ngx data table icon item.
+   * @param ngxDataTableIconItemConfig
    * @param baseNgxDataTableItem
-   * @param NgxDataTableItemConfig
    * @returns data table icon item
    */
   private generateNgxDataTableIconItem(
+    ngxDataTableIconItemConfig: fromNgxDataTableModels.NgxDataTableIconItem,
     baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem,
-    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableIconItemConfig,
   ): fromNgxDataTableModels.NgxDataTableIconItem {
     const ngxDataTableIconItem = {
-      height: ngxDataTableItemConfig.height,
-      width: ngxDataTableItemConfig.width,
-      src: ngxDataTableItemConfig.src,
+      iconType: ngxDataTableIconItemConfig.iconType,
+      height: ngxDataTableIconItemConfig.height,
+      width: ngxDataTableIconItemConfig.width,
+      src: ngxDataTableIconItemConfig.src,
     };
     return { ...baseNgxDataTableItem, ...ngxDataTableIconItem };
   }
 
   /**
    * Generate ngx data table link item.
-   * @param NgxDataTableItemConfig
+   * @param ngxDataTableItemConfig
+   * @param baseNgxDataTableItem
    * @returns data table icon item
    */
   private generateNgxDataTableLinkItem(
+    ngxDataTableLinkItemConfig: fromNgxDataTableModels.NgxDataTableLinkItem,
     baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem,
-    ngxDataTableItemConfig: fromNgxDataTableModels.NgxDataTableLinkItemConfig,
   ): fromNgxDataTableModels.NgxDataTableLinkItem {
     const ngxDataTableLinkItem = {
-      href: ngxDataTableItemConfig.href,
-      routeUrl: ngxDataTableItemConfig.routeUrl,
-      target: ngxDataTableItemConfig.target,
+      linkType: ngxDataTableLinkItemConfig.linkType,
+      href: ngxDataTableLinkItemConfig.href,
+      routeUrl: ngxDataTableLinkItemConfig.routeUrl,
+      target: ngxDataTableLinkItemConfig.target,
     };
     return { ...baseNgxDataTableItem, ...ngxDataTableLinkItem };
   }

@@ -1,30 +1,12 @@
 // models
-import {
-  NgxDataTableItemConfigSet,
-  NgxDataTableItemSet,
-} from './ngx-data-table-item.model';
-
-//--[card header]------------------------------//
-
-// card header config
-export interface NgxDataTableCardHeaderConfig {
-  labelKey: [''];
-  subLabelKey: [''];
-}
+import { NgxDataTableItemSet } from './ngx-data-table-item.model';
 
 // card header
 export interface NgxDataTableCardHeader {
-  label: string;
-  subLabel: string;
-}
-
-//--[card body]-------------------------------//
-
-// card body config
-export interface NgxDataTableCardBodyConfig {
-  panelA: NgxDataTableItemConfigSet;
-  panelB: NgxDataTableItemConfigSet;
-  panelC: NgxDataTableItemConfigSet;
+  label?: string;
+  subLabel?: string;
+  labelKey?: string[];
+  subLabelKey?: string[];
 }
 
 // card body
@@ -34,25 +16,9 @@ export interface NgxDataTableCardBody {
   panelC: NgxDataTableItemSet;
 }
 
-//--[card footer]------------------------------//
-
-// card footer config
-export interface NgxDataTableCardFooterConfig {
-  dataTableItemConfigSet: NgxDataTableItemConfigSet;
-}
-
 // card footer
 export interface NgxDataTableCardFooter {
   dataTableItemSet: NgxDataTableItemSet;
-}
-
-//--[card]-----------------------------------//
-
-// card config
-export interface NgxDataTableCardConfig {
-  header: NgxDataTableCardHeaderConfig;
-  body: NgxDataTableCardBodyConfig;
-  footer: NgxDataTableCardFooterConfig;
 }
 
 // card
