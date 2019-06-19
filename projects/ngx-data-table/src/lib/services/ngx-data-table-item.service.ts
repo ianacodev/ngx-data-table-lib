@@ -79,7 +79,9 @@ export class NgxDataTableItemService {
     ngxDataTableDisplayItemConfig: fromNgxDataTableModels.NgxDataTableDisplayItem,
     baseNgxDataTableItem: fromNgxDataTableModels.NgxDataTableBaseItem,
   ): fromNgxDataTableModels.NgxDataTableDisplayItem {
-    const ngxDataTableDisplayItem = {};
+    const ngxDataTableDisplayItem = {
+      hideLabel: ngxDataTableDisplayItemConfig.hideLabel,
+    };
     return { ...baseNgxDataTableItem, ...ngxDataTableDisplayItem };
   }
 

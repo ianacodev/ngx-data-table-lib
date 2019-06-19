@@ -36,7 +36,9 @@ export interface NgxDataTableButtonItem extends NgxDataTableBaseItem {
 }
 
 // display item
-export interface NgxDataTableDisplayItem extends NgxDataTableBaseItem {}
+export interface NgxDataTableDisplayItem extends NgxDataTableBaseItem {
+  hideLabel: boolean;
+}
 
 // icon item
 export interface NgxDataTableIconItem extends NgxDataTableBaseItem {

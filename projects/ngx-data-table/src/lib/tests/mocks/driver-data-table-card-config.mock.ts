@@ -33,6 +33,7 @@ export const driverCardConfig: any = {
         itemKey: ['phoneNumber'],
         classes: [],
         styles: [],
+        hideLabel: true,
       },
       {
         id: '3',
@@ -42,6 +43,7 @@ export const driverCardConfig: any = {
         itemKey: ['startTime'],
         classes: [],
         styles: [],
+        hideLabel: false,
       },
       {
         id: '4',
@@ -51,6 +53,7 @@ export const driverCardConfig: any = {
         itemKey: ['endTime'],
         classes: [],
         styles: [],
+        hideLabel: false,
       },
     ],
     panelC: [
@@ -60,6 +63,8 @@ export const driverCardConfig: any = {
         itemName: 'route-btn',
         itemLabel: 'route',
         itemKey: [],
+        classes: [],
+        styles: [],
         actionType: 'route',
       },
     ],
@@ -72,6 +77,9 @@ export const driverCardConfig: any = {
         itemName: 'active',
         itemLabel: 'Active status',
         itemKey: ['active'],
+        classes: [],
+        styles: [],
+        hideLabel: false,
       },
     ],
   },
