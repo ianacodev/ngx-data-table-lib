@@ -1,5 +1,16 @@
 // models
-import { DataItemMap } from './item.model';
+import {
+  NgxDataTableItemConfigSet,
+  NgxDataTableItemSet,
+} from './ngx-data-table-item.model';
+
+//--[card header]------------------------------//
+
+// card header config
+export interface NgxDataTableCardHeaderConfig {
+  labelKey: [''];
+  subLabelKey: [''];
+}
 
 // card header
 export interface NgxDataTableCardHeader {
@@ -7,16 +18,41 @@ export interface NgxDataTableCardHeader {
   subLabel: string;
 }
 
+//--[card body]-------------------------------//
+
+// card body config
+export interface NgxDataTableCardBodyConfig {
+  panelA: NgxDataTableItemConfigSet;
+  panelB: NgxDataTableItemConfigSet;
+  panelC: NgxDataTableItemConfigSet;
+}
+
 // card body
 export interface NgxDataTableCardBody {
-  panelA: DataItemMap;
-  panelB: DataItemMap;
-  panelC: DataItemMap;
+  panelA: NgxDataTableItemSet;
+  panelB: NgxDataTableItemSet;
+  panelC: NgxDataTableItemSet;
+}
+
+//--[card footer]------------------------------//
+
+// card footer config
+export interface NgxDataTableCardFooterConfig {
+  dataTableItemConfigSet: NgxDataTableItemConfigSet;
 }
 
 // card footer
 export interface NgxDataTableCardFooter {
-  dataItemMap: DataItemMap;
+  dataTableItemSet: NgxDataTableItemSet;
+}
+
+//--[card]-----------------------------------//
+
+// card config
+export interface NgxDataTableCardConfig {
+  header: NgxDataTableCardHeaderConfig;
+  body: NgxDataTableCardBodyConfig;
+  footer: NgxDataTableCardFooterConfig;
 }
 
 // card
@@ -26,3 +62,6 @@ export interface NgxDataTableCard {
   footer: NgxDataTableCardFooter;
   data?: any;
 }
+
+// card set
+export type NgxDataTableCardSet = NgxDataTableCard[];

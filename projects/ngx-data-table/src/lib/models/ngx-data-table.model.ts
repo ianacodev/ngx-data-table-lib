@@ -5,5 +5,3 @@ import { NgxDataTableCard } from './ngx-data-table-card.model';
 export interface NgxDataTable {
   cards: NgxDataTableCard[];
 }
-
-// data table config
