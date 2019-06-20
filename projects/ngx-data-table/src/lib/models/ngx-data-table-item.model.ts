@@ -9,7 +9,7 @@ export enum NgxDataTableItemTypes {
 // link types
 export enum LinkTypes {
   Route = 'route',
-  Url = 'url',
+  Redirect = 'redirect',
 }
 
 // icon types

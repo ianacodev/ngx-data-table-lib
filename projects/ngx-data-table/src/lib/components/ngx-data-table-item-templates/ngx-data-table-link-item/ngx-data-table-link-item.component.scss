@@ -1,0 +1,9 @@
+// imports
+@import '../../../../styles/custom';
+
+.c-ngx-data-table-link-item {
+  &__link {
+    color: map-get($colors, blue-lgt);
+    text-decoration: underline;
+  }
+}

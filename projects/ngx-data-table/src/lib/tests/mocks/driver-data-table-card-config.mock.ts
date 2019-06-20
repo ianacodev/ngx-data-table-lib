@@ -28,6 +28,23 @@ export const driverCardConfig: any = {
         src:
           'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
       },
+      {
+        id: '2',
+        itemType: fromNgxDataTableModels.NgxDataTableItemTypes.Icon,
+        itemName: 'color-icon',
+        itemLabel: 'color icon',
+        itemKey: ['colorHexCode'],
+        classExp: {},
+        styleExp: {
+          'border-radius': '50%',
+          'box-shadow': '1px 1px 8px gray',
+          height: '45px',
+          width: '45px',
+        },
+        iconType: fromNgxDataTableModels.IconTypes.image,
+        src:
+          'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
+      },
     ],
     panelB: [
       {
@@ -71,6 +88,18 @@ export const driverCardConfig: any = {
         classExp: {},
         styleExp: {},
         actionType: 'route',
+      },
+      {
+        id: '5',
+        itemType: fromNgxDataTableModels.NgxDataTableItemTypes.Link,
+        itemName: 'route-btn',
+        itemLabel: 'google',
+        itemKey: [],
+        classExp: {},
+        styleExp: {},
+        linkType: 'redirect',
+        href: 'https://www.google.com',
+        target: '_blank',
       },
     ],
   },

@@ -1,3 +1,10 @@
-<div class="c-ngx-data-table-button">
-  <div>button: {{ ngxDataTableItem | json }}</div>
+<div class="c-ngx-data-table-button-item">
+  <button
+    class="c-ngx-data-table-button-item__button"
+    [ngClass]="ngxDataTableItem.classExp"
+    [ngStyle]="ngxDataTableItem.styleExp"
+    (click)="onNgxDataTableItemActionClick(ngxDataTableItem)"
+  >
+    {{ ngxDataTableItem.itemLabel }}
+  </button>
 </div>

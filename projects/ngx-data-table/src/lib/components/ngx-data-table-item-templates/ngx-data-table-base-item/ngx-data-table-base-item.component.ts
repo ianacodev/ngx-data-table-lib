@@ -1,5 +1,5 @@
 // vendor
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 // models
 import { NgxDataTableItem } from '../../../models';
 
@@ -10,4 +10,17 @@ import { NgxDataTableItem } from '../../../models';
 })
 export class NgxDataTableBaseItemComponent {
   @Input() ngxDataTableItem: NgxDataTableItem;
+  @Output() ngxDataTableItemActionClick: EventEmitter<NgxDataTableItem>;
+
+  constructor() {
+    this.ngxDataTableItemActionClick = new EventEmitter();
+  }
+
+  /**
+   * On ngx data table item action click.
+   * @param ngxDataTableItem
+   */
+  onNgxDataTableItemActionClick(ngxDataTableItem: NgxDataTableItem): void {
+    this.ngxDataTableItemActionClick.emit(ngxDataTableItem);
+  }
 }

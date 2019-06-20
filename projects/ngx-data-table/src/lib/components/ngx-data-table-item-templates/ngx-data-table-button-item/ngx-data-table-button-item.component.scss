@@ -1,0 +1,18 @@
+// imports
+@import '../../../../styles/custom';
+
+.c-ngx-data-table-button-item {
+  &__button {
+    background-color: map-get($colors, blue-lgt);
+    border: 2px solid map-get($colors, gray-med);
+    border-radius: 4px;
+    color: map-get($colors, white);
+    font-size: 16px;
+    outline: none;
+    padding: 8px 30px;
+    text-transform: capitalize;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}

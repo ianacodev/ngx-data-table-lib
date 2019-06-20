@@ -1,7 +1,9 @@
 // vendor
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 // components
 import { NgxDataTableBaseItemComponent } from '../ngx-data-table-base-item/ngx-data-table-base-item.component';
+// models
+import { NgxDataTableItem } from '../../../models';
 
 @Component({
   selector: 'ngx-data-table-button-item',

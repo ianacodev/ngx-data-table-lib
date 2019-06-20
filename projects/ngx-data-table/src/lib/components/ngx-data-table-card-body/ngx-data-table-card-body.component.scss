@@ -2,7 +2,13 @@
 @import '../../../styles/custom';
 
 .c-ngx-data-table-card-body {
+  align-items: center;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 5px 15px;
+
+  ngx-data-table-item-set:not(:first-child):not(:last-child) {
+    flex-grow: 1;
+  }
 }
