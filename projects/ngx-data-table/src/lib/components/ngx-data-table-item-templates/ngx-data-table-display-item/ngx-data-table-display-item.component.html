@@ -1,3 +1,11 @@
 <div class="c-ngx-data-table-display-item">
-  <div>display: {{ ngxDataTableItem | json }}</div>
+  <div
+    class="c-ngx-data-table-display-item__label"
+    *ngIf="!ngxDataTableItem.hideLabel"
+  >
+    {{ ngxDataTableItem.itemLabel }}
+  </div>
+  <div class="c-ngx-data-table-display-item__value">
+    {{ ngxDataTableItem.itemValue }}
+  </div>
 </div>

@@ -44,8 +44,8 @@ export class NgxDataTableItemService {
         ngxDataTableItemConfig.itemKey,
         dataItem,
       ),
-      classes: ngxDataTableItemConfig.classes,
-      styles: ngxDataTableItemConfig.styles,
+      classExp: ngxDataTableItemConfig.classExp,
+      styleExp: ngxDataTableItemConfig.styleExp,
     };
     return this.ngxDataTableItemFunctionMap[ngxDataTableItemConfig.itemType](
       ngxDataTableItemConfig,

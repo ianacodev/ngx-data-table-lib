@@ -74,6 +74,8 @@ export class NgxDataTableSyncService {
         ngxDataTableCardHeaderConfig.subLabelKey,
         dataItem,
       ),
+      classExp: ngxDataTableCardHeaderConfig.classExp,
+      styleExp: ngxDataTableCardHeaderConfig.styleExp,
     };
   }
 

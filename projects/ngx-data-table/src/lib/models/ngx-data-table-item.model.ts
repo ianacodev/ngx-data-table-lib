@@ -26,8 +26,8 @@ export interface NgxDataTableBaseItem {
   itemLabel: string;
   itemKey: string[];
   itemValue?: any;
-  classes: string[];
-  styles: string[];
+  classExp: Object;
+  styleExp: Object;
 }
 
 // button item

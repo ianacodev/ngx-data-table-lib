@@ -7,6 +7,8 @@ export interface NgxDataTableCardHeader {
   subLabel?: string;
   labelKey?: string[];
   subLabelKey?: string[];
+  classExp: Object;
+  styleExp: Object;
 }
 
 // card body

@@ -9,5 +9,8 @@ export const resolvePropertyValue: Function = (
   dataItem: any,
 ): any => {
   let obj: any = dataItem;
-  return properties.map((property: any) => (obj = obj[property]))[0];
+  const propertyValue: any = properties.map(
+    (property: any) => (obj = obj[property]),
+  );
+  return propertyValue[properties.length - 1];
 };

@@ -1,0 +1,15 @@
+// imports
+@import '../../../../styles/custom';
+
+.c-ngx-data-table-display-item {
+  display: flex;
+  flex-direction: row;
+
+  &__label {
+    font-weight: $font-weight-bold;
+    margin-right: 5px;
+  }
+
+  &__value {
+  }
+}

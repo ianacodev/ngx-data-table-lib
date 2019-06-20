@@ -13,7 +13,6 @@ import { IconTypes, NgxDataTableIconItem } from '../../../models';
 export class NgxDataTableIconItemComponent extends NgxDataTableBaseItemComponent
   implements OnInit {
   iconTypes: any;
-  styleObjExp: Object;
 
   constructor() {
     super();
@@ -21,12 +20,9 @@ export class NgxDataTableIconItemComponent extends NgxDataTableBaseItemComponent
   }
 
   ngOnInit() {
-    const tempItem: NgxDataTableIconItem = this
-      .ngxDataTableItem as NgxDataTableIconItem;
-    this.styleObjExp = {
-      height: `${tempItem.height}`,
-      width: `${tempItem.width}px`,
-      'background-color': tempItem.itemValue,
+    this.ngxDataTableItem.styleExp = {
+      ...this.ngxDataTableItem.styleExp,
+      ...{ 'background-color': this.ngxDataTableItem.itemValue },
     };
   }
 }
