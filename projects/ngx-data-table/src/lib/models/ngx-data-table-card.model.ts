@@ -11,16 +11,25 @@ export interface NgxDataTableCardHeader {
   styleExp: Object;
 }
 
-// card body
-export interface NgxDataTableCardBody {
+// card body content
+export interface NgxDataTableCardBodyContent {
   panelA: NgxDataTableItemSet;
   panelB: NgxDataTableItemSet;
   panelC: NgxDataTableItemSet;
 }
 
+// card body
+export interface NgxDataTableCardBody {
+  content: NgxDataTableCardBodyContent;
+  classExp: Object;
+  styleExp: Object;
+}
+
 // card footer
 export interface NgxDataTableCardFooter {
   dataTableItemSet: NgxDataTableItemSet;
+  classExp: Object;
+  styleExp: Object;
 }
 
 // card

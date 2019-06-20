@@ -90,18 +90,22 @@ export class NgxDataTableSyncService {
     dataItem: any,
   ): fromNgxDataTableModels.NgxDataTableCardBody {
     return {
-      panelA: this.generateNgxDataTableCardItemSet(
-        ngxDataTableCardBodyConfig.panelA,
-        dataItem,
-      ),
-      panelB: this.generateNgxDataTableCardItemSet(
-        ngxDataTableCardBodyConfig.panelB,
-        dataItem,
-      ),
-      panelC: this.generateNgxDataTableCardItemSet(
-        ngxDataTableCardBodyConfig.panelC,
-        dataItem,
-      ),
+      content: {
+        panelA: this.generateNgxDataTableCardItemSet(
+          ngxDataTableCardBodyConfig.content.panelA,
+          dataItem,
+        ),
+        panelB: this.generateNgxDataTableCardItemSet(
+          ngxDataTableCardBodyConfig.content.panelB,
+          dataItem,
+        ),
+        panelC: this.generateNgxDataTableCardItemSet(
+          ngxDataTableCardBodyConfig.content.panelC,
+          dataItem,
+        ),
+      },
+      classExp: ngxDataTableCardBodyConfig.classExp,
+      styleExp: ngxDataTableCardBodyConfig.styleExp,
     };
   }
 
@@ -121,6 +125,8 @@ export class NgxDataTableSyncService {
     );
     return {
       dataTableItemSet: ngxDataTableItemSet,
+      classExp: ngxDataTableCardFooterConfig.classExp,
+      styleExp: ngxDataTableCardFooterConfig.styleExp,
     };
   }
 

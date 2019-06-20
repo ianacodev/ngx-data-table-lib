@@ -1,4 +1,8 @@
-<section class="c-ngx-data-table-card-body">
+<section
+  class="c-ngx-data-table-card-body"
+  [ngClass]="ngxDataTableCardBody_.classExp"
+  [ngStyle]="ngxDataTableCardBody_.styleExp"
+>
   <ngx-data-table-item-set
     [ngxDataTableItemSet]="ngxDataTableItemSet"
     *ngFor="let ngxDataTableItemSet of ngxDataTableItemSets"

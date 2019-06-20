@@ -1,12 +1,14 @@
-<div class="c-ngx-data-table-icon-item">
+<div
+  class="c-ngx-data-table-icon-item"
+  [ngClass]="ngxDataTableItem.classExp"
+  [ngStyle]="ngxDataTableItem.styleExp"
+>
   <div *ngIf="ngxDataTableItem.iconType === iconTypes.image">
+    <!-- TODO_CLEANUP: fix having to do duplicate style -->
     <img
       [ngStyle]="ngxDataTableItem.styleExp"
       [src]="ngxDataTableItem.src"
       alt="img"
     />
-  </div>
-  <div *ngIf="ngxDataTableItem.iconType === iconTypes.custom">
-    <div [ngStyle]="ngxDataTableItem.styleExp"></div>
   </div>
 </div>

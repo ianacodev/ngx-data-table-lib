@@ -9,10 +9,14 @@ import { NgxDataTableCardBody, NgxDataTableItemSet } from '../../models';
   templateUrl: './ngx-data-table-card-body.component.html',
 })
 export class NgxDataTableCardBodyComponent {
+  ngxDataTableCardBody_: NgxDataTableCardBody;
   ngxDataTableItemSets: NgxDataTableItemSet[];
   @Input() set ngxDataTableCardBody(
     ngxDataTableCardBody: NgxDataTableCardBody,
   ) {
-    this.ngxDataTableItemSets = Object.values(ngxDataTableCardBody);
+    this.ngxDataTableCardBody_ = ngxDataTableCardBody;
+    this.ngxDataTableItemSets = Object.values(
+      this.ngxDataTableCardBody_.content,
+    );
   }
 }

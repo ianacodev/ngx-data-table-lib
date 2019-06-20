@@ -1,0 +1,10 @@
+// imports
+@import '../../../styles/custom';
+
+.c-ngx-data-table-card-footer {
+  align-items: center;
+  background-color: map-get($colors, gray-lgt);
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}

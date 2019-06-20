@@ -1,9 +1,13 @@
-<div class="c-ngx-data-table-display-item">
+<div
+  class="c-ngx-data-table-display-item"
+  [ngClass]="ngxDataTableItem.classExp"
+  [ngStyle]="ngxDataTableItem.styleExp"
+>
   <div
     class="c-ngx-data-table-display-item__label"
     *ngIf="!ngxDataTableItem.hideLabel"
   >
-    {{ ngxDataTableItem.itemLabel }}
+    {{ ngxDataTableItem.itemLabel }}:
   </div>
   <div class="c-ngx-data-table-display-item__value">
     {{ ngxDataTableItem.itemValue }}
