@@ -1,7 +1,14 @@
 // imports
-import { NgxDataTableCard } from './ngx-data-table-card.model';
+import {
+  NgxDataTableCard,
+  NgxDataTableCardSet,
+} from './ngx-data-table-card.model';
 
 // data table
 export interface NgxDataTable {
-  card: NgxDataTableCard;
+  cardSet: NgxDataTableCardSet;
+}
+
+export interface NgxDataTableConfig {
+  cardConfig: NgxDataTableCard;
 }

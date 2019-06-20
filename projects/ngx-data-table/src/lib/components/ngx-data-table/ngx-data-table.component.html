@@ -1,7 +1,7 @@
-<section class="ngx-data-table">
-  <div style="margin-bottom: 50px">data: {{ data | json }}</div>
-  <div style="margin-bottom: 50px">config: {{ dataTableConfig | json }}</div>
-  <div style="margin-bottom: 50px">
-    card set: {{ ngxDataTableCardSet | json }}
+<section class="c-ngx-data-table">
+  <div class="l-container">
+    <ngx-data-table-card-set
+      [ngxDataTableCardSet]="ngxDataTable.cardSet"
+    ></ngx-data-table-card-set>
   </div>
 </section>

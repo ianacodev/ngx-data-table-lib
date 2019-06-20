@@ -1,0 +1,18 @@
+// imports
+@import '../../../styles/custom';
+
+.c-ngx-data-table-card-header {
+  background: linear-gradient(to bottom, #333366c7, #333366f2, #333366);
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+  color: map-get($colors, map-get($colors, white));
+  padding: 5px 15px;
+
+  &__label {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__sub-label {
+    font-size: 12px;
+  }
+}
