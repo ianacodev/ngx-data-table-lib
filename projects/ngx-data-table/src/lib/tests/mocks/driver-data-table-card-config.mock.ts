@@ -18,8 +18,8 @@ export const driverCardConfig: any = {
         classes: [],
         styles: [],
         iconType: fromNgxDataTableModels.IconTypes.image,
-        height: 25,
-        width: 25,
+        height: 45,
+        width: 45,
         src:
           'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
       },

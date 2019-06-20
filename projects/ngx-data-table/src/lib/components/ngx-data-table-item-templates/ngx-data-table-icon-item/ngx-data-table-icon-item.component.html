@@ -1,3 +1,9 @@
 <div class="c-ngx-data-table-icon-item">
   <div>icon: {{ ngxDataTableItem | json }}</div>
+  <div *ngIf="ngxDataTableItem.iconType === iconTypes.image">
+    <img [ngStyle]="styleObjExp" [src]="ngxDataTableItem.src" alt="img" />
+  </div>
+  <div *ngIf="ngxDataTableItem.iconType === iconTypes.custom">
+    <i [ngStyle]="styleObjExp"></i>
+  </div>
 </div>
