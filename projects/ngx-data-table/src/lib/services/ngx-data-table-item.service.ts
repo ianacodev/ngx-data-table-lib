@@ -97,8 +97,6 @@ export class NgxDataTableItemService {
   ): fromNgxDataTableModels.NgxDataTableIconItem {
     const ngxDataTableIconItem = {
       iconType: ngxDataTableIconItemConfig.iconType,
-      height: ngxDataTableIconItemConfig.height,
-      width: ngxDataTableIconItemConfig.width,
       src: ngxDataTableIconItemConfig.src,
     };
     return { ...baseNgxDataTableItem, ...ngxDataTableIconItem };

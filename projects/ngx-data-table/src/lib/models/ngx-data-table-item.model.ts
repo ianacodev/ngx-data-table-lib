@@ -43,8 +43,6 @@ export interface NgxDataTableDisplayItem extends NgxDataTableBaseItem {
 // icon item
 export interface NgxDataTableIconItem extends NgxDataTableBaseItem {
   iconType: IconTypes;
-  height: number;
-  width: number;
   src: string;
 }
 
@@ -57,11 +55,16 @@ export interface NgxDataTableLinkItem extends NgxDataTableBaseItem {
 }
 
 // data table item
+/*
 export type NgxDataTableItem =
   | NgxDataTableButtonItem
   | NgxDataTableDisplayItem
   | NgxDataTableIconItem
   | NgxDataTableLinkItem;
+*/
+
+// TODO_FIX: NgxDataTableItemType
+export type NgxDataTableItem = any;
 
 // data table item set
 export type NgxDataTableItemSet = NgxDataTableItem[];
