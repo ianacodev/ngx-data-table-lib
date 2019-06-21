@@ -11,7 +11,7 @@ export const driverCardConfig: any = {
   },
   body: {
     classExp: {},
-    styleExp: { 'background-color': 'yellow' },
+    styleExp: {},
     content: {
       panelA: [
         {
@@ -28,23 +28,6 @@ export const driverCardConfig: any = {
             width: '45px',
           },
           iconType: fromNgxDataTableModels.IconTypes.custom,
-          src:
-            'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
-        },
-        {
-          id: '2',
-          itemType: fromNgxDataTableModels.NgxDataTableItemTypes.Icon,
-          itemName: 'color-icon',
-          itemLabel: 'color icon',
-          itemKey: ['colorHexCode'],
-          classExp: {},
-          styleExp: {
-            'border-radius': '50%',
-            'box-shadow': '1px 1px 8px gray',
-            height: '45px',
-            width: '45px',
-          },
-          iconType: fromNgxDataTableModels.IconTypes.image,
           src:
             'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
         },
@@ -92,24 +75,12 @@ export const driverCardConfig: any = {
           styleExp: {},
           actionType: 'route',
         },
-        {
-          id: '5',
-          itemType: fromNgxDataTableModels.NgxDataTableItemTypes.Link,
-          itemName: 'route-btn',
-          itemLabel: 'google',
-          itemKey: [],
-          classExp: {},
-          styleExp: {},
-          linkType: 'redirect',
-          href: 'https://www.google.com',
-          target: '_blank',
-        },
       ],
     },
   },
   footer: {
     classExp: {},
-    styleExp: { 'background-color': 'green' },
+    styleExp: {},
     dataTableItemSet: [
       {
         id: '5',
@@ -118,7 +89,7 @@ export const driverCardConfig: any = {
         itemLabel: 'Active status',
         itemKey: ['active'],
         classExp: {},
-        styleExp: { 'background-color': 'yellow' },
+        styleExp: {},
         hideLabel: false,
       },
     ],

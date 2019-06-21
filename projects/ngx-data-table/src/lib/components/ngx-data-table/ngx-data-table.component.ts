@@ -1,9 +1,9 @@
 // vendor
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // services
 import { NgxDataTableSyncService } from '../../services';
 // models
-import { NgxDataTable, NgxDataTableConfig } from './../../models';
+import { TableInput, NgxDataTable } from './../../models';
 // mocks
 import * as fromNgxDataTableTestMocks from '../../tests/mocks';
 
@@ -12,23 +12,30 @@ import * as fromNgxDataTableTestMocks from '../../tests/mocks';
   styleUrls: ['./ngx-data-table.component.scss'],
   templateUrl: './ngx-data-table.component.html',
 })
-export class NgxDataTableComponent implements OnInit {
+export class NgxDataTableComponent {
   ngxDataTable: NgxDataTable;
-  @Input() data: any;
-  @Input() dataTableConfig: NgxDataTableConfig;
+  @Input() set tableInput(tableInput: TableInput) {
+    this.generateNgxDataTable(tableInput);
+  }
 
   constructor(private ngxDataTableSyncService: NgxDataTableSyncService) {
-    // temp default data
-    this.data = fromNgxDataTableTestMocks.drivers;
-    this.dataTableConfig = {
-      cardConfig: fromNgxDataTableTestMocks.driverCardConfig,
+    const ngxDataTableCardSet = this.ngxDataTableSyncService.generateDataTableCardSet(
+      fromNgxDataTableTestMocks.driverCardConfig,
+      fromNgxDataTableTestMocks.drivers,
+    );
+    this.ngxDataTable = {
+      cardSet: ngxDataTableCardSet,
     };
   }
 
-  ngOnInit() {
+  /**
+   * Generate ngx data table.
+   * @param tableInput
+   */
+  generateNgxDataTable(tableInput: TableInput): void {
     const ngxDataTableCardSet = this.ngxDataTableSyncService.generateDataTableCardSet(
-      this.dataTableConfig.cardConfig,
-      this.data,
+      tableInput.config.cardConfig,
+      tableInput.data,
     );
     this.ngxDataTable = {
       cardSet: ngxDataTableCardSet,

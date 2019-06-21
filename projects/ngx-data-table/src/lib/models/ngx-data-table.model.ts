@@ -12,3 +12,7 @@ export interface NgxDataTable {
 export interface NgxDataTableConfig {
   cardConfig: NgxDataTableCard;
 }
+export interface TableInput {
+  data: any;
+  config: NgxDataTableConfig;
+}
