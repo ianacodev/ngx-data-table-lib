@@ -1,0 +1,33 @@
+<div class="c-ngx-data-form-control-select" [formGroup]="parentForm">
+  <div class="c-ngx-data-form-control-select__label">{{ controlLabel }}</div>
+  <select
+    class="c-ngx-data-form-control-select__control"
+    [formControlName]="controlName"
+  >
+    <option
+      class="c-ngx-data-form-control-select__placeholder"
+      disabled="disabled"
+      [selected]="!parentForm.get(controlName).value"
+      value="null"
+      >{{ placeholder }}</option
+    >
+    <option
+      *ngFor="let option of options"
+      [selected]="option[optionKeyValue] === parentForm.get(controlName).value"
+      [value]="option[optionKeyValue]"
+    >
+      {{ option[optionKeyDisplay] }}
+    </option>
+  </select>
+  <div
+    class="c-ngx-data-form-control-select__control-error"
+    *ngIf="parentForm.get(controlName).errors && formSubmittedStatus"
+  >
+    <div
+      class="c-ngx-data-form-control-select__error-message"
+      *ngIf="parentForm.get(controlName).errors.required"
+    >
+      Error
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+// imports
+@import '../../../styles/custom';
+// vars
+$placeholder-color: #a9a9a9;
+
+.c-ngx-data-form-control-select {
+  margin: 30px;
+
+  &__label {
+    color: map-get($colors, blue-drk);
+    font-size: 12px;
+    font-weight: $font-weight-super-bold;
+    margin-bottom: 5px;
+  }
+
+  &__control {
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    // background-image: url('../../../../../assets/icons/angle-down.svg');
+    background-position: right -5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid map-get($colors, rotten);
+    border-radius: 0;
+    border-width: 0 0 1px;
+    outline: none;
+    width: 100%;
+  }
+
+  &__control-error {
+    color: map-get($colors, dragon);
+  }
+}

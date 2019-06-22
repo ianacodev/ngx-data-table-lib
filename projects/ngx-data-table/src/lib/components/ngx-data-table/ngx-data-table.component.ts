@@ -6,7 +6,6 @@ import { NgxDataTableSyncService } from '../../services';
 import { TableInput, NgxDataTable } from './../../models';
 // mocks
 import * as fromNgxDataTableTestMocks from '../../tests/mocks';
-
 @Component({
   selector: 'ngx-data-table',
   styleUrls: ['./ngx-data-table.component.scss'],
@@ -15,7 +14,9 @@ import * as fromNgxDataTableTestMocks from '../../tests/mocks';
 export class NgxDataTableComponent {
   ngxDataTable: NgxDataTable;
   @Input() set tableInput(tableInput: TableInput) {
-    this.generateNgxDataTable(tableInput);
+    if (tableInput) {
+      this.generateNgxDataTable(tableInput);
+    }
   }
 
   constructor(private ngxDataTableSyncService: NgxDataTableSyncService) {

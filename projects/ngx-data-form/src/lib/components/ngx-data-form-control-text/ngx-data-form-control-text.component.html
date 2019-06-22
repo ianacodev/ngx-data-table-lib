@@ -1,0 +1,24 @@
+<div
+  class="c-ngx-data-form-control-text"
+  [ngClass]="{ 'c-ngx-data-form-control-text-invert': invertStatus }"
+  [formGroup]="parentForm"
+>
+  <div class="c-ngx-data-form-control-text__label">{{ controlLabel }}</div>
+  <input
+    type="text"
+    class="c-ngx-data-form-control-text__control"
+    [formControlName]="controlName"
+    [placeholder]="placeholder"
+  />
+  <div
+    class="c-ngx-data-form-control-text__control-error"
+    *ngIf="parentForm.get(controlName).errors && formSubmittedStatus"
+  >
+    <div
+      class="c-ngx-data-form-control-text__error-message"
+      *ngIf="parentForm.get(controlName).errors.required"
+    >
+      Error
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="c-ngx-data-form">
+  <div class="c-ngx-data-form__title">
+    Driver Table Settings
+  </div>
+  <form
+    class="c-ngx-data-form__form"
+    [formGroup]="ngxDataForm"
+    (ngSubmit)="onSubmitNgxDataForm(ngxDataForm)"
+  >
+    <!-- header begin -->
+    <section class="l-container l-container-form-section">
+      <div class="c-ngx-data-form__section-header">Card Header</div>
+      <div class="c-ngx-data-form__section-body">
+        <!-- owner / owner entity / series -->
+        <div class="c-form-section__row">
+          <ngx-data-form-control-select
+            [parentForm]="ngxDataForm"
+            [controlLabel]="'Card Header Label'"
+            [controlName]="'labelKey'"
+            [options]="ngxDataTableHeaderLabelOptions"
+            [optionKeyValue]="'keySet'"
+            [optionKeyDisplay]="'label'"
+            [placeholder]="'Select header label'"
+            [formSubmittedStatus]="ngxDataFormSubmittedStatus"
+          >
+          </ngx-data-form-control-select>
+          <ngx-data-form-control-select
+            [parentForm]="ngxDataForm"
+            [controlLabel]="'Card Header Sub Label'"
+            [controlName]="'subLabelKey'"
+            [options]="ngxDataTableHeaderLabelOptions"
+            [optionKeyValue]="'keySet'"
+            [optionKeyDisplay]="'label'"
+            [placeholder]="'Select header sub label'"
+            [formSubmittedStatus]="ngxDataFormSubmittedStatus"
+          >
+          </ngx-data-form-control-select>
+          <ngx-data-form-control-text
+            [parentForm]="ngxDataForm"
+            [controlLabel]="'Classes'"
+            [controlName]="'classExp'"
+            [placeholder]="'Enter classes'"
+            [formSubmittedStatus]="ngxDataFormSubmittedStatus"
+          ></ngx-data-form-control-text>
+          <ngx-data-form-control-text
+            [parentForm]="ngxDataForm"
+            [controlLabel]="'Styles'"
+            [controlName]="'styleExp'"
+            [placeholder]="'Enter styles'"
+            [formSubmittedStatus]="ngxDataFormSubmittedStatus"
+          ></ngx-data-form-control-text>
+        </div>
+        <!-- investor / beneficial investor / status -->
+        <div class="c-form-section__row c-btn-row">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </section>
+    <!-- header end -->
+  </form>
+</div>

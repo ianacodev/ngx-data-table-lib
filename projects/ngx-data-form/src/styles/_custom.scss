@@ -1,0 +1,62 @@
+/*!
+ * VRP Branding
+ */
+
+// brand colors
+$black: #000000;
+$blue-lgt: #4885ed;
+$blue-med: #444488;
+$blue-drk: #333366;
+$green-lgt: #3cba54;
+$green-drk: #218748;
+$gray-lgt: #f7f7f7;
+$gray-med: #999999;
+$gray-drk: #595959;
+$red-drk: #e71921;
+$white: #ffffff;
+$yellow: #f4c20d;
+
+$colors: (
+  black: $black,
+  blue-lgt: $blue-lgt,
+  blue-med: $blue-med,
+  blue-drk: $blue-drk,
+  green-drk: $green-drk,
+  gray-lgt: $gray-lgt,
+  gray-med: $gray-med,
+  gray-drk: $gray-drk,
+  red-drk: $red-drk,
+  white: $white,
+  yellow: $yellow,
+);
+
+// typeography
+$font-family-open-sans: 'Open Sans';
+$font-family-base: $font-family-open-sans;
+$font-weight-light: 200;
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+$font-weight-extra-bold: 700;
+$font-weight-super-bold: 900;
+
+// box shadows
+$box-shadow-default: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+
+// fonts
+$font-family: 'Open Sans', sans-serif;
+
+// media breakpoints
+$media-breakpoints: (
+  // iphone 5/SE
+    xxs: 325px,
+  // iphone 6/7/8
+    xs: 380px,
+  // iphone 6/7/8 plus
+    sm: 420px,
+  // ipad
+    md: 775px,
+  // ipad pro
+    lg: 1030px,
+  // desktop,
+    xl: 1200px
+) !default;

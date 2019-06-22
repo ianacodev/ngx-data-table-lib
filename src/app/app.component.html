@@ -1,3 +1,6 @@
 <section>
-  <ngx-data-table></ngx-data-table>
+  <ngx-data-form
+    (submitNgxDataForm)="submitNgxDataForm($event)"
+  ></ngx-data-form>
+  <ngx-data-table [tableInput]="tableInput"></ngx-data-table>
 </section>

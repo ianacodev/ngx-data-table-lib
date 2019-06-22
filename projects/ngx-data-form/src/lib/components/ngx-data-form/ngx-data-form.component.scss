@@ -1,0 +1,45 @@
+// imports
+@import '../../../styles/custom';
+
+.c-ngx-data-form {
+  font-family: $font-family;
+  margin-bottom: 30px;
+  padding: 15px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__section-header {
+    font-size: 18px;
+    margin: 15px;
+  }
+
+  .c-form-section__row {
+  }
+
+  .c-ngx-data-form__section-body {
+    background-color: map-get($colors, gray-lgt);
+    box-shadow: 1px 1px 6px map-get($colors, gray-med);
+    padding: 15px;
+  }
+
+  .c-btn-row {
+    text-align: right;
+  }
+
+  .btn {
+    background-color: map-get($colors, green-drk);
+    border: 2px solid map-get($colors, gray-med);
+    border-radius: 4px;
+    color: map-get($colors, white);
+    font-size: 16px;
+    outline: none;
+    padding: 8px 30px;
+    text-transform: capitalize;
+    // width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
